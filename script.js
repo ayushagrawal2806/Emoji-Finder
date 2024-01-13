@@ -1,6 +1,7 @@
 let table_body = document.querySelector("tbody");
 let input_text = document.querySelector("input")
 let button = document.querySelector("button");
+let last = document.querySelector(".end");
 
 function display(arr = ""){
    let filtered = emojiList.filter((elements) => {
@@ -38,6 +39,13 @@ function display(arr = ""){
         data_2.innerText = element.aliases;
         data_3.innerText = element.description;
     })
+
+    if(table_body.children.length == 0){
+        last.style.display = "block";
+    }else{
+        last.style.display = "none";
+    }
+   
 }
 
 window.onload = () =>{
@@ -49,8 +57,8 @@ input_text.addEventListener("keyup" , () => {
         table_body.lastChild.remove();
     }
     let val = input_text.value;
-    console.log(val);
     display(val);
+    
 });
 
 
@@ -61,7 +69,7 @@ button.addEventListener("click" , () => {
     let val = input_text.value;
     input_text.value = null;
     display(val);
-
+  
 });
 
 

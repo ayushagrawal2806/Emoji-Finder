@@ -82,3 +82,9 @@ table{
     text-transform: capitalize;
 }
 
+.end{
+    display: none;
+    text-align: center;
+    text-transform: capitalize;
+}
+
